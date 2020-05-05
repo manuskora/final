@@ -47,12 +47,15 @@ function draw() {
       let point73 = {x:point78.x-(.03+.03*tilt_y)*(features[7].x-point78.x),y:point78.y-(.03+.03*tilt_y)*(features[7].y-point78.y)}
       let point75 = {x:point79.x-(.03+.03*tilt_y)*(features[7].x-point79.x),y:point79.y-(.03+.03*tilt_y)*(features[7].y-point79.y)}
       let point80 = {x:(point74.x+tilt_y*features[33].x)/(tilt_y+1),y:(point74.y+tilt_y*features[33].y)/(tilt_y+1)}
-      let point81 = {x:features[1].x-tilt_y*(features[7].x-features[1].x),y:features[1].y-tilt_y*(features[7].y-features[1].y)}
-      let point84 = {x:features[13].x-tilt_y*(features[7].x-features[13].x),y:features[13].y-tilt_y*(features[7].y-features[13].y)}
-      let point82 = {x:features[2].x-tilt_y*(features[7].x-features[2].x),y:features[2].y-tilt_y*(features[7].y-features[2].y)}
-      let point85 = {x:features[12].x-tilt_y*(features[7].x-features[12].x),y:features[12].y-tilt_y*(features[7].y-features[12].y)}
-      let point83 = {x:features[0].x-tilt_y*(features[7].x-features[0].x),y:features[0].y-tilt_y*(features[7].y-features[0].y)}
-      let point86 = {x:features[14].x-tilt_y*(features[7].x-features[14].x),y:features[14].y-tilt_y*(features[7].y-features[14].y)}
+      let point81 = {x:features[1].x-1.5*((tilt_y+1)/2)*(features[7].x-features[1].x),y:features[1].y-1.5*((tilt_y+1)/2)*(features[7].y-features[1].y)}
+      let point84 = {x:features[13].x-1.5*((tilt_y+1)/2)*(features[7].x-features[13].x),y:features[13].y-1.5*((tilt_y+1)/2)*(features[7].y-features[13].y)}
+      let point82 = {x:features[2].x-((tilt_y+1)/2)*(features[7].x-features[2].x),y:features[2].y-((tilt_y+1)/2)*(features[7].y-features[2].y)}
+      let point85 = {x:features[12].x-((tilt_y+1)/2)*(features[7].x-features[12].x),y:features[12].y-((tilt_y+1)/2)*(features[7].y-features[12].y)}
+      let point83 = {x:features[0].x-((tilt_y+1)/2)*(features[7].x-features[0].x),y:features[0].y-((tilt_y+1)/2)*(features[7].y-features[0].y)}
+      let point86 = {x:features[14].x-((tilt_y+1)/2)*(features[7].x-features[14].x),y:features[14].y-((tilt_y+1)/2)*(features[7].y-features[14].y)}
+      let butt = {x:features[7].x+.6*(features[7].x-point74.x),y:features[7].y+.6*(features[7].y-point74.y)}
+      let point87 = {x:butt.x+100*fsize, y:butt.y}
+      let point88 = {x:butt.x-100*fsize, y:butt.y}
 
       let jaw=[features[0],
       features[1],
@@ -108,6 +111,18 @@ function draw() {
         }
         endShape(CLOSE)
 
+        // fill(255,255,0,255)
+        // noStroke()
+        // beginShape()
+        // curveVertex(features[4].x,features[4].y)
+        // curveVertex(point87.x,point87.y)
+        // curveVertex(point88.x,point88.y)
+        // curveVertex(features[10].x,features[10].y)
+        // curveVertex(features[4].x,features[4].y)
+        // curveVertex(point87.x,point87.y)
+        // curveVertex(point88.x,point88.y)
+        // endShape(CLOSE)
+
     fill(0)
     noStroke()
         beginShape()
@@ -155,7 +170,6 @@ function draw() {
     beginShape()
     curveVertex(features[0].x,features[0].y)
     curveVertex(point83.x,point83.y)
-    point(point81.x,point81.y)
     curveVertex(point82.x,point82.y)
     curveVertex(features[2].x,features[2].y)
     endShape(CLOSE)
@@ -165,9 +179,24 @@ function draw() {
     beginShape()
     curveVertex(features[14].x,features[14].y)
     curveVertex(point86.x,point86.y)
-    point(point84.x,point84.y)
     curveVertex(point85.x,point85.y)
     curveVertex(features[12].x,features[12].y)
+    endShape(CLOSE)
+
+    fill(0)
+    noStroke()
+    beginShape()
+    vertex(point86.x,point86.y)
+    vertex(point84.x,point84.y)
+    vertex(point85.x,point85.y)
+    endShape(CLOSE)
+
+    fill(0)
+    noStroke()
+    beginShape()
+    vertex(point83.x,point83.y)
+    vertex(point81.x,point81.y)
+    vertex(point82.x,point82.y)
     endShape(CLOSE)
 
 
@@ -179,7 +208,6 @@ function draw() {
     ellipse((2*features[44].x+features[1].x)/3,(2*features[44].y+features[1].y)/3,(features[44].x+2*features[1].x)/3,(features[44].y+2*features[1].y)/3)
     ellipse((2*features[50].x+features[13].x)/3,(2*features[50].y+features[13].y)/3,(features[50].x+2*features[13].x)/3,(features[50].y+2*features[13].y)/3)
     pop()
-
       }
 
 // this function flips the webcam and displays it
